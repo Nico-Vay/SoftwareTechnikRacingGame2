@@ -6,8 +6,8 @@ public class CarController : MonoBehaviour
 {
     public Rigidbody sphereRB;
 
-    private float moveInput;
-    private float turnInput;
+    [HideInInspector] public float moveInput;
+    [HideInInspector] public float turnInput;
 
     public float forwardSpeed;
     public float reverseSpeed;
@@ -15,7 +15,7 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-        //detach Motor from Car
+        //detach "Motor" from Car
         sphereRB.transform.parent = null;
     }
 
