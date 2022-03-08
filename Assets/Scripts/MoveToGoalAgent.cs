@@ -45,6 +45,10 @@ public class MoveToGoalAgent : Agent
             SetReward(-1f);
             EndEpisode();
         }
+        if (other.TryGetComponent<CheckPointSingle>(out CheckPointSingle checkPoint))
+        {
+            AddReward(+0.5f);
+        }
     }
 
 
