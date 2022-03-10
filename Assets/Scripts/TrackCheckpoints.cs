@@ -47,4 +47,12 @@ public class TrackCheckpoints : MonoBehaviour
             //correctCheckpointSingle.Show(); 
         }
     }
+
+    public void ResetCheckpoints()
+    {
+        foreach (CheckPointSingle checkPointSingle in checkPointSingleList)
+        {
+            checkPointSingle.Reset();
+        }
+    }
 }

@@ -9,12 +9,15 @@ public class MoveToGoalAgent : Agent
 {
     [SerializeField] private Transform targetTransform;
 
+    [SerializeField] private TrackCheckpoints trackCheckpoints;
+
     private CarController carController;
 
     public override void OnEpisodeBegin()
     {
         transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
-        targetTransform.localPosition = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(85f, 90f));
+        //targetTransform.localPosition = new Vector3(Random.Range(-105f, -110f), 0, Random.Range(103f, 113f));
+        trackCheckpoints.ResetCheckpoints();
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -28,7 +31,7 @@ public class MoveToGoalAgent : Agent
         float moveX =  actions.ContinuousActions[0];
         float moveZ =  actions.ContinuousActions[1];
 
-        float moveSpeed = 5f;
+        float moveSpeed = 8f;
 
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
@@ -37,7 +40,7 @@ public class MoveToGoalAgent : Agent
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+1f);
+            SetReward(+10f);
             EndEpisode();
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
@@ -47,9 +50,7 @@ public class MoveToGoalAgent : Agent
         }
         if (other.TryGetComponent<CheckPointSingle>(out CheckPointSingle checkPoint))
         {
-            AddReward(+0.5f);
+            checkPoint.OnCheckpointEnter(this);
         }
     }
-
-
 }

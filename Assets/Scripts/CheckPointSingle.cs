@@ -7,6 +7,7 @@ public class CheckPointSingle : MonoBehaviour
 
     private TrackCheckpoints trackCheckpoints;
     private MeshRenderer meshRenderer;
+    private bool isCheckpointActive = false;
 
     private void Awake()
     {
@@ -37,5 +38,19 @@ public class CheckPointSingle : MonoBehaviour
     public void Hide()
     {
         meshRenderer.enabled = false;
+    }
+
+    public void OnCheckpointEnter(MoveToGoalAgent moveToGoalAgent)
+    {
+        if (isCheckpointActive)
+        {
+            moveToGoalAgent.AddReward(+0.5f);
+            isCheckpointActive = false;
+        }
+    }
+
+    public void Reset()
+    {
+        isCheckpointActive = true;
     }
 }
