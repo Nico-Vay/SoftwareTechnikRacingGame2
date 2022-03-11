@@ -1,0 +1,65 @@
+{
+    "MoveToGoal": {
+        "checkpoints": [
+            {
+                "steps": 35999965,
+                "file_path": "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-35999965.onnx",
+                "reward": 9.017857142857142,
+                "creation_time": 1646980086.4780223,
+                "auxillary_file_paths": [
+                    "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-35999965.pt"
+                ]
+            },
+            {
+                "steps": 36999949,
+                "file_path": "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-36999949.onnx",
+                "reward": 14.428571428571429,
+                "creation_time": 1646980922.546776,
+                "auxillary_file_paths": [
+                    "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-36999949.pt"
+                ]
+            },
+            {
+                "steps": 37999959,
+                "file_path": "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-37999959.onnx",
+                "reward": 4.611111111111111,
+                "creation_time": 1646981758.8628767,
+                "auxillary_file_paths": [
+                    "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-37999959.pt"
+                ]
+            },
+            {
+                "steps": 38999950,
+                "file_path": "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-38999950.onnx",
+                "reward": 2.0,
+                "creation_time": 1646982603.1098478,
+                "auxillary_file_paths": [
+                    "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-38999950.pt"
+                ]
+            },
+            {
+                "steps": 39706423,
+                "file_path": "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-39706423.onnx",
+                "reward": null,
+                "creation_time": 1646983264.8768458,
+                "auxillary_file_paths": [
+                    "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-39706423.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 39706423,
+            "file_path": "results\\Special_Improvement4\\MoveToGoal.onnx",
+            "reward": null,
+            "creation_time": 1646983264.8768458,
+            "auxillary_file_paths": [
+                "results\\Special_Improvement4\\MoveToGoal\\MoveToGoal-39706423.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}
