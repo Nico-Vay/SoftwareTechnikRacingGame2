@@ -44,7 +44,7 @@ public class CheckPointSingle : MonoBehaviour
     {
         if (isCheckpointActive)
         {
-            moveToGoalAgent.AddReward(+0.5f);
+            moveToGoalAgent.AddReward(+1f);
             isCheckpointActive = false;
         }
     }

@@ -13,6 +13,8 @@ public class MoveToGoalAgent : Agent
 
     public Rigidbody agentRigidbody;
 
+    public float _moveSpeed;
+
     public override void OnEpisodeBegin()
     {
         transform.localPosition = new Vector3(Random.Range(-0f, 0f), 0, Random.Range(-0f, 0f));
@@ -47,7 +49,7 @@ public class MoveToGoalAgent : Agent
             case 2: addForce.z = +1f; break;
         }
 
-        float moveSpeed = 10f;
+        float moveSpeed = _moveSpeed;
 
         agentRigidbody.velocity = addForce * moveSpeed + new Vector3(0, agentRigidbody.velocity.y, 0);
     }
@@ -68,6 +70,7 @@ public class MoveToGoalAgent : Agent
             case -1: discreteActions[1] = 1; break;
             case  0: discreteActions[1] = 0; break;
             case +1: discreteActions[1] = 2; break;
+
         }
     }
 
@@ -75,12 +78,12 @@ public class MoveToGoalAgent : Agent
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+10f);
+            SetReward(+20f);
             EndEpisode();
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            SetReward(-1f);
+            SetReward(-5f);
             EndEpisode();
         }
         if (other.TryGetComponent<CheckPointSingle>(out CheckPointSingle checkPoint))

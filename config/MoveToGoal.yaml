@@ -20,11 +20,8 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.25
-        demo_path: Demos/MoveToTheFucking.demo
-    behavioral_cloning:
-        strength: 0.25
-        demo_path: Demos/MoveToTheFucking.demo
-    checkpoint_interval: 1000000
+        demo_path: Demos/FinalLearning.demo
+    checkpoint_interval: 5000000
     max_steps: 50000000
     time_horizon: 64
-    summary_freq: 100000
+    summary_freq: 250000
